@@ -39,8 +39,8 @@ const addThing = () => {
     return addQuestion() + sentenceParts.things[randomize(sentenceParts.things.length)];
 }
 
-// Adds the verb if the question requires it (has a 'does' in it)
-const addVerb = () => {
+// Adds the verb if the question requires it and compiles the full sentence (has a 'does' in it)
+const compileSentence = () => {
     const sentence = addThing();
     if (sentence.includes('does')) {
         return sentence + ' ' + sentenceParts.verbs[randomize(sentenceParts.verbs.length)] + '?';
@@ -48,4 +48,4 @@ const addVerb = () => {
     return sentence + '?';
 }
 
-console.log(addVerb());
+console.log(compileSentence());
